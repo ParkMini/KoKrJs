@@ -1,27 +1,27 @@
 class 콘솔 {
   /**
    * 일반 정보를 콘솔에 출력합니다.
-   * @param {*} data 출력할 데이터
+   * @param {*} 데이터 출력할 데이터
    */
-  static 출력(data) {
-    console.log(data);
+  static 출력(데이터) {
+    console.log(데이터);
   }
 
   /**
    * 에러 메시지를 콘솔에 출력합니다.
-   * @param {*} data 출력할 에러 메시지
+   * @param {*} 데이터 출력할 에러 메시지
    */
-  static 에러출력(data) {
-    console.error(data);
+  static 에러출력(데이터) {
+    console.error(데이터);
   }
 
   /**
    * 조건이 참이 아닐 경우 콘솔에 메시지를 출력합니다.
-   * @param {boolean} condition 조건식
-   * @param {*} data 출력할 데이터
+   * @param {boolean} 조건 조건식
+   * @param {*} 데이터 출력할 데이터
    */
-  static 단언(condition, ...data) {
-    console.assert(condition, ...data);
+  static 단언(조건, ...데이터) {
+    console.assert(조건, ...데이터);
   }
 
   /**
@@ -33,59 +33,59 @@ class 콘솔 {
 
   /**
    * 주어진 라벨로 카운트를 시작하거나 카운트를 증가시킵니다.
-   * @param {string} label 카운트 라벨
+   * @param {string} 라벨 카운트 라벨
    */
-  static 카운트(label = "") {
-    console.count(label);
+  static 카운트(라벨 = "") {
+    console.count(라벨);
   }
 
   /**
    * 주어진 라벨의 카운트를 리셋합니다.
-   * @param {string} label 카운트 라벨
+   * @param {string} 라벨 카운트 라벨
    */
-  static 카운트리셋(label = "") {
-    console.countReset(label);
+  static 카운트리셋(라벨 = "") {
+    console.countReset(라벨);
   }
 
   /**
    * 디버그 정보를 콘솔에 출력합니다.
-   * @param {*} data 출력할 데이터
+   * @param {*} 데이터 출력할 데이터
    */
-  static 디버그(...data) {
-    console.debug(...data);
+  static 디버그(...데이터) {
+    console.debug(...데이터);
   }
 
   /**
    * 객체의 속성을 콘솔에 보기 좋게 출력합니다.
-   * @param {*} item 출력할 객체
-   * @param {*} options 옵션
+   * @param {*} 항목 출력할 객체
+   * @param {*} 옵션 옵션
    */
-  static 디렉토리(item, options) {
-    console.dir(item, options);
+  static 디렉토리(항목, 옵션) {
+    console.dir(항목, 옵션);
   }
 
   /**
    * XML 형식의 데이터를 콘솔에 출력합니다.
-   * @param {*} data 출력할 데이터
+   * @param {*} 데이터 출력할 데이터
    */
-  static 디렉토리XML(...data) {
-    console.dirxml(...data);
+  static 디렉토리XML(...데이터) {
+    console.dirxml(...데이터);
   }
 
   /**
    * 콘솔에 메시지 그룹을 시작합니다.
-   * @param {*} data 그룹의 제목
+   * @param {*} 데이터 그룹의 제목
    */
-  static 그룹(...data) {
-    console.group(...data);
+  static 그룹(...데이터) {
+    console.group(...데이터);
   }
 
   /**
    * 콘솔에 접힌 메시지 그룹을 시작합니다.
-   * @param {*} data 그룹의 제목
+   * @param {*} 데이터 그룹의 제목
    */
-  static 그룹접기(...data) {
-    console.groupCollapsed(...data);
+  static 그룹접기(...데이터) {
+    console.groupCollapsed(...데이터);
   }
 
   /**
@@ -97,76 +97,76 @@ class 콘솔 {
 
   /**
    * 정보 메시지를 콘솔에 출력합니다.
-   * @param {*} data 출력할 데이터
+   * @param {*} 데이터 출력할 데이터
    */
-  static 정보(...data) {
-    console.info(...data);
+  static 정보(...데이터) {
+    console.info(...데이터);
   }
 
   /**
    * 로그 메시지를 콘솔에 출력합니다.
-   * @param {*} data 출력할 데이터
+   * @param {*} 데이터 출력할 데이터
    */
-  static 로그(...data) {
-    console.log(...data);
+  static 로그(...데이터) {
+    console.log(...데이터);
   }
 
   /**
    * 테이블 형태로 데이터를 콘솔에 출력합니다.
-   * @param {*} tabularData 테이블로 출력할 데이터
-   * @param {string[]} properties 표시할 속성 목록
+   * @param {*} 테이블데이터 테이블로 출력할 데이터
+   * @param {string[]} 속성목록 표시할 속성 목록
    */
-  static 테이블(tabularData, properties) {
-    console.table(tabularData, properties);
+  static 테이블(테이블데이터, 속성목록) {
+    console.table(테이블데이터, 속성목록);
   }
 
   /**
    * 시간 측정을 시작합니다.
-   * @param {string} label 시간 측정 라벨
+   * @param {string} 라벨 시간 측정 라벨
    */
-  static 시간(label = "") {
-    console.time(label);
+  static 시간(라벨 = "") {
+    console.time(라벨);
   }
 
   /**
    * 시작된 시간 측정을 종료합니다.
-   * @param {string} label 시간 측정 라벨
+   * @param {string} 라벨 시간 측정 라벨
    */
-  static 시간끝(label = "") {
-    console.timeEnd(label);
+  static 시간끝(라벨 = "") {
+    console.timeEnd(라벨);
   }
 
   /**
    * 진행 중인 시간 측정에 로그를 기록합니다.
-   * @param {string} label 시간 측정 라벨
-   * @param {*} data 추가 출력할 데이터
+   * @param {string} 라벨 시간 측정 라벨
+   * @param {*} 데이터 추가 출력할 데이터
    */
-  static 시간로그(label = "", ...data) {
-    console.timeLog(label, ...data);
+  static 시간로그(라벨 = "", ...데이터) {
+    console.timeLog(라벨, ...데이터);
   }
 
   /**
    * 타임스탬프를 콘솔에 기록합니다.
-   * @param {string} label 타임스탬프 라벨
+   * @param {string} 라벨 타임스탬프 라벨
    */
-  static 타임스탬프(label = "") {
-    console.timeStamp(label);
+  static 타임스탬프(라벨 = "") {
+    console.timeStamp(라벨);
   }
 
   /**
    * 호출 스택을 콘솔에 출력합니다.
-   * @param {*} data 출력할 데이터
+   * @param {*} 데이터 출력할 데이터
    */
-  static 트레이스(...data) {
-    console.trace(...data);
+  static 트레이스(...데이터) {
+    console.trace(...데이터);
   }
 
   /**
    * 경고 메시지를 콘솔에 출력합니다.
-   * @param {*} data 출력할 데이터
+   * @param {*} 데이터 출력할 데이터
    */
-  static 경고(...data) {
-    console.warn(...data);
+  static 경고(...데이터) {
+    console.warn(...데이터);
   }
 }
 
