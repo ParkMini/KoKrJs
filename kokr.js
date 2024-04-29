@@ -320,3 +320,144 @@ class 수학 {
    */
   static 탄젠트(x) { return Math.tan(x); }
 }
+
+class 날짜 {
+  constructor() {
+      this.date = new Date();
+  }
+
+  /** 날짜를 문자열로 반환합니다. 문자열의 형식은 지역 설정에 따라 다릅니다. */
+  문자열로() {
+      return this.date.toString();
+  }
+
+  /** 날짜 부분을 문자열로 반환합니다. */
+  날짜문자열로() {
+      return this.date.toDateString();
+  }
+
+  /** 시간 부분을 문자열로 반환합니다. */
+  시간문자열로() {
+      return this.date.toTimeString();
+  }
+
+  /** 현지 지역 설정에 적합한 문자열로 날짜와 시간을 반환합니다. */
+  지역문자열로() {
+      return this.date.toLocaleString();
+  }
+
+  /** 현지 지역 설정에 적합한 문자열로 날짜를 반환합니다. */
+  지역날짜문자열로() {
+      return this.date.toLocaleDateString();
+  }
+
+  /** 현지 지역 설정에 적합한 문자열로 시간을 반환합니다. */
+  지역시간문자열로() {
+      return this.date.toLocaleTimeString();
+  }
+
+  /** 1970년 1월 1일 자정 이후의 밀리초 단위 시간 값을 반환합니다. */
+  값으로() {
+      return this.date.valueOf();
+  }
+
+  /** 1970년 1월 1일 자정 이후의 밀리초 단위 시간 값을 반환합니다. */
+  시간가져오기() {
+      return this.date.getTime();
+  }
+
+  /** 현지 시간을 기준으로 연도를 가져옵니다. */
+  연도가져오기() {
+      return this.date.getFullYear();
+  }
+
+  /** UTC를 기준으로 연도를 가져옵니다. */
+  UTC연도가져오기() {
+      return this.date.getUTCFullYear();
+  }
+
+  /** 현지 시간을 기준으로 월을 가져옵니다 (0-11). */
+  월가져오기() {
+      return this.date.getMonth();
+  }
+
+  /** UTC를 기준으로 월을 가져옵니다 (0-11). */
+  UTC월가져오기() {
+      return this.date.getUTCMonth();
+  }
+
+  /** 현지 시간을 기준으로 일(날짜)를 가져옵니다. */
+  일가져오기() {
+      return this.date.getDate();
+  }
+
+  /** UTC를 기준으로 일(날짜)를 가져옵니다. */
+  UTC일가져오기() {
+      return this.date.getUTCDate();
+  }
+
+  /** 현지 시간을 기준으로 요일을 가져옵니다 (0-6). */
+  요일가져오기() {
+      return this.date.getDay();
+  }
+
+  /** UTC를 기준으로 요일을 가져옵니다 (0-6). */
+  UTC요일가져오기() {
+      return this.date.getUTCDay();
+  }
+
+  /** 현지 시간을 기준으로 시간을 가져옵니다. */
+  시간가져오기() {
+      return this.date.getHours();
+  }
+
+  /** UTC를 기준으로 시간을 가져옵니다. */
+  UTC시간가져오기() {
+      return this.date.getUTCHours();
+  }
+
+  /** 현지 시간을 기준으로 분을 가져옵니다. */
+  분가져오기() {
+      return this.date.getMinutes();
+  }
+
+  /** UTC를 기준으로 분을 가져옵니다. */
+  UTC분가져오기() {
+      return this.date.getUTCMinutes();
+  }
+
+  /** 현지 시간을 기준으로 초를 가져옵니다. */
+  초가져오기() {
+      return this.date.getSeconds();
+  }
+
+  /** UTC를 기준으로 초를 가져옵니다. */
+  UTC초가져오기() {
+      return this.date.getUTCSeconds();
+  }
+
+  /** 현지 시간을 기준으로 밀리초를 가져옵니다. */
+  밀리초가져오기() {
+      return this.date.getMilliseconds();
+  }
+
+  /** UTC를 기준으로 밀리초를 가져옵니다. */
+  UTC밀리초가져오기() {
+      return this.date.getUTCMilliseconds();
+  }
+
+  /** 현지 시간과 UTC의 차이(분)를 반환합니다. */
+  시차가져오기() {
+      return this.date.getTimezoneOffset();
+  }
+
+  /** 현지 시간을 기준으로 날짜와 시간을 ISO 형식의 문자열로 반환합니다. */
+  ISO문자열로() {
+      return this.date.toISOString();
+  }
+
+  /** JSON 형식으로 객체의 데이터를 변환할 때 사용됩니다. */
+  JSON으로(키) {
+      return this.date.toJSON(키);
+  }
+}
