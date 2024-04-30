@@ -460,4 +460,120 @@ class 날짜 {
   JSON으로(키) {
       return this.date.toJSON(키);
   }
+
+      /** 밀리초를 설정합니다. (현지 시간 기준)
+     * @param {number} 밀리초 - 밀리초 값
+     */
+    밀리초설정하기(밀리초) {
+        return this.date.setMilliseconds(밀리초);
+    }
+
+    /** 밀리초를 설정합니다. (UTC 기준)
+     * @param {number} 밀리초 - 밀리초 값
+     */
+    UTC밀리초설정하기(밀리초) {
+        return this.date.setUTCMilliseconds(밀리초);
+    }
+
+    /** 초를 설정합니다. (현지 시간 기준)
+     * @param {number} 초 - 초 값
+     * @param {number} [밀리초] - 밀리초 값 (선택적)
+     */
+    초설정하기(초, 밀리초) {
+        return this.date.setSeconds(초, 밀리초);
+    }
+
+    /** 초를 설정합니다. (UTC 기준)
+     * @param {number} 초 - 초 값
+     * @param {number} [밀리초] - 밀리초 값 (선택적)
+     */
+    UTC초설정하기(초, 밀리초) {
+        return this.date.setUTCSeconds(초, 밀리초);
+    }
+
+    /** 분을 설정합니다. (현지 시간 기준)
+     * @param {number} 분 - 분 값
+     * @param {number} [초] - 초 값 (선택적)
+     * @param {number} [밀리초] - 밀리초 값 (선택적)
+     */
+    분설정하기(분, 초, 밀리초) {
+        return this.date.setMinutes(분, 초, 밀리초);
+    }
+
+    /** 분을 설정합니다. (UTC 기준)
+     * @param {number} 분 - 분 값
+     * @param {number} [초] - 초 값 (선택적)
+     * @param {number} [밀리초] - 밀리초 값 (선택적)
+     */
+    UTC분설정하기(분, 초, 밀리초) {
+        return this.date.setUTCMinutes(분, 초, 밀리초);
+    }
+
+    /** 시간을 설정합니다. (현지 시간 기준)
+     * @param {number} 시 - 시간 값
+     * @param {number} [분] - 분 값 (선택적)
+     * @param {number} [초] - 초 값 (선택적)
+     * @param {number} [밀리초] - 밀리초 값 (선택적)
+     */
+    시간설정하기(시, 분, 초, 밀리초) {
+        return this.date.setHours(시, 분, 초, 밀리초);
+    }
+
+    /** 시간을 설정합니다. (UTC 기준)
+     * @param {number} 시 - 시간 값
+     * @param {number} [분] - 분 값 (선택적)
+     * @param {number} [초] - 초 값 (선택적)
+     * @param {number} [밀리초] - 밀리초 값 (선택적)
+     */
+    UTC시간설정하기(시, 분, 초, 밀리초) {
+        return this.date.setUTCHours(시, 분, 초, 밀리초);
+    }
+
+    /** 일(날짜)을 설정합니다. (현지 시간 기준)
+     * @param {number} 일 - 일 값
+     */
+    일설정하기(일) {
+        return this.date.setDate(일);
+    }
+
+    /** 일(날짜)을 설정합니다. (UTC 기준)
+     * @param {number} 일 - 일 값
+     */
+    UTC일설정하기(일) {
+        return this.date.setUTCDate(일);
+    }
+
+    /** 월을 설정합니다. (현지 시간 기준)
+     * @param {number} 월 - 월 값 (0-11)
+     * @param {number} [일] - 일 값 (선택적)
+     */
+    월설정하기(월, 일) {
+        return this.date.setMonth(월, 일);
+    }
+
+    /** 월을 설정합니다. (UTC 기준)
+     * @param {number} 월 - 월 값 (0-11)
+     * @param {number} [일] - 일 값 (선택적)
+     */
+    UTC월설정하기(월, 일) {
+        return this.date.setUTCMonth(월, 일);
+    }
+
+    /** 연도를 설정합니다. (현지 시간 기준)
+     * @param {number} 연도 - 연도 값
+     * @param {number} [월] - 월 값 (0-11, 선택적)
+     * @param {number} [일] - 일 값 (선택적)
+     */
+    연도설정하기(연도, 월, 일) {
+        return this.date.setFullYear(연도, 월, 일);
+    }
+
+    /** 연도를 설정합니다. (UTC 기준)
+     * @param {number} 연도 - 연도 값
+     * @param {number} [월] - 월 값 (0-11, 선택적)
+     * @param {number} [일] - 일 값 (선택적)
+     */
+    UTC연도설정하기(연도, 월, 일) {
+        return this.date.setUTCFullYear(연도, 월, 일);
+    }
 }
