@@ -742,3 +742,118 @@ class 배열 {
       return new 배열(this.배열.filter(콜백));
   }
 }
+
+class 문자열 {
+    /**
+     * 문자열 인스턴스를 생성합니다.
+     * @param {string} 초기값 초기 문자열 값
+     */
+    constructor(초기값) {
+        this.문자열 = 초기값;
+    }
+
+    /** 문자열의 길이를 반환합니다. */
+    길이가져오기() {
+        return this.문자열.length;
+    }
+
+    /**
+     * 문자열의 특정 인덱스에 있는 문자를 반환합니다.
+     * @param {number} 위치 문자의 위치
+     */
+    문자가져오기(위치) {
+        return this.문자열.charAt(위치);
+    }
+
+    /**
+     * 문자열을 다른 문자열로 대체합니다.
+     * @param {string|RegExp} 찾을문자 찾을 문자열 또는 정규 표현식
+     * @param {string|Function} 대체할문자 대체할 문자열 또는 함수
+     */
+    대체하기(찾을문자, 대체할문자) {
+        return new 문자열(this.문자열.replace(찾을문자, 대체할문자));
+    }
+
+    /**
+     * 문자열에서 특정 문자열을 찾아 위치 인덱스를 반환합니다.
+     * @param {string} 찾을문자 찾을 문자열
+     * @param {number} [시작위치=0] 검색을 시작할 위치
+     */
+    위치찾기(찾을문자, 시작위치) {
+        return this.문자열.indexOf(찾을문자, 시작위치);
+    }
+
+    /**
+     * 문자열을 소문자로 변환합니다.
+     */
+    소문자로변환() {
+        return new 문자열(this.문자열.toLowerCase());
+    }
+
+    /**
+     * 문자열을 대문자로 변환합니다.
+     */
+    대문자로변환() {
+        return new 문자열(this.문자열.toUpperCase());
+    }
+
+    /**
+     * 문자열의 앞뒤 공백을 제거합니다.
+     */
+    공백제거() {
+        return new 문자열(this.문자열.trim());
+    }
+
+    /**
+     * 문자열의 일부를 추출합니다.
+     * @param {number} 시작 시작 인덱스
+     * @param {number} [끝] 끝 인덱스
+     */
+    부분추출(시작, 끝) {
+        return new 문자열(this.문자열.slice(시작, 끝));
+    }
+
+    /**
+     * 문자열을 지정된 구분자로 나누어 배열로 반환합니다.
+     * @param {string|RegExp} 구분자 문자열을 나눌 구분자
+     * @param {number} [최대길이] 반환할 최대 배열 길이
+     */
+    나누기(구분자, 최대길이) {
+        return this.문자열.split(구분자, 최대길이).map(요소 => new 문자열(요소));
+    }
+
+    /**
+     * 지정된 문자열로 시작하는지 확인합니다.
+     * @param {string} 문자열 검색할 문자열
+     * @param {number} [시작위치=0] 검색을 시작할 위치
+     */
+    시작확인(문자열, 시작위치) {
+        return this.문자열.startsWith(문자열, 시작위치);
+    }
+
+    /**
+     * 지정된 문자열로 끝나는지 확인합니다.
+     * @param {string} 문자열 검색할 문자열
+     * @param {number} [길이=this.문자열.length] 검색할 문자열의 길이
+     */
+    끝확인(문자열, 길이) {
+        return this.문자열.endsWith(문자열, 길이);
+    }
+
+    /**
+     * 문자열에 특정 문자열이 포함되어 있는지 확인합니다.
+     * @param {string} 문자열 검색할 문자열
+     * @param {number} [시작위치=0] 검색을 시작할 위치
+     */
+    포함확인(문자열, 시작위치) {
+        return this.문자열.includes(문자열, 시작위치);
+    }
+
+    /**
+     * 문자열을 반복합니다.
+     * @param {number} 횟수 반복할 횟수
+     */
+    반복하기(횟수) {
+        return new 문자열(this.문자열.repeat(횟수));
+    }
+}
