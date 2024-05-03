@@ -551,12 +551,19 @@ class 날짜 {
         return this.date.setMonth(월, 일);
     }
 
+    /**
+     * # Issues
+     * [ UTC월설정하기에 '일' 데이터를 받아 실행하면 Invaild Date 에러가 발생 ]
+     * 월 설정 메서드는 월 값을 변경하기 위함으로써 '일' 파라미터를 제거
+     * [ UTC연도설정하기에 '월' 또는 '일' 데이터를 받아 실행하면 Invaild Date 에러가 발생 ]
+     * 연도 설정 메서드는 연도를 변경하기 위함으로써 '월' 또는 '일' 파라미터를 제거
+     */
+
     /** 월을 설정합니다. (UTC 기준)
      * @param {number} 월 - 월 값 (0-11)
-     * @param {number} [일] - 일 값 (선택적)
      */
-    UTC월설정하기(월, 일) {
-        return this.date.setUTCMonth(월, 일);
+    UTC월설정하기(월) {
+        return this.date.setUTCMonth(월);
     }
 
     /** 연도를 설정합니다. (현지 시간 기준)
@@ -570,10 +577,8 @@ class 날짜 {
 
     /** 연도를 설정합니다. (UTC 기준)
      * @param {number} 연도 - 연도 값
-     * @param {number} [월] - 월 값 (0-11, 선택적)
-     * @param {number} [일] - 일 값 (선택적)
      */
-    UTC연도설정하기(연도, 월, 일) {
-        return this.date.setUTCFullYear(연도, 월, 일);
+    UTC연도설정하기(연도) {
+        return this.date.setUTCFullYear(연도);
     }
 }
