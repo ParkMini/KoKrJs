@@ -37,8 +37,8 @@ HTML 파일에 다음과 같은 스크립트 태그를 추가하여 `kokr.js` �
 | 수학(Math)     | ✅        |
 | 날짜(Date)     | ✅        |
 | 배열(Array)    | ✅        |
-| 문자열(String) | -         |
-| 객체(Object)   | -         |
+| 문자열(String) | ✅        |
+| 객체(Object)   | ✅        |
 
 <details>
 <summary>콘솔 클래스 (Console)</summary>
@@ -197,6 +197,28 @@ HTML 파일에 다음과 같은 스크립트 태그를 추가하여 `kokr.js` �
 - `끝확인(문자열, 길이)` - 지정된 문자열로 끝나는지 확인합니다. (`String.prototype.endsWith`)
 - `포함확인(문자열, 시작위치)` - 문자열에 특정 문자열이 포함되어 있는지 확인합니다. (`String.prototype.includes`)
 - `반복하기(횟수)` - 문자열을 반복합니다. (`String.prototype.repeat`)
+
+</details>
+
+<details>
+<summary>객체 클래스</summary>
+
+#### 속성
+
+- `객체` - 내부 JavaScript Object를 저장합니다.
+
+#### 메서드
+
+- `항목들가져오기()` - 객체의 속성과 값을 키-값 쌍으로 반환합니다. (`Object.entries`)
+- `키들가져오기()` - 객체의 모든 키(속성 이름)를 배열로 반환합니다. (`Object.keys`)
+- `값들가져오기()` - 객체의 모든 값들을 배열로 반환합니다. (`Object.values`)
+- `속성값가져오기(속성)` - 지정된 속성의 값을 반환합니다. (`Object.prototype.hasOwnProperty`)
+- `속성설정하기(속성, 값)` - 객체에 속성과 값을 추가하거나 변경합니다. (`Object.prototype`)
+- `속성삭제하기(속성)` - 객체에서 지정된 속성을 삭제합니다. (`delete`)
+- `각속성에실행하기(콜백)` - 주어진 콜백 함수를 객체의 각 속성에 대해 실행합니다. (`for...in loop`)
+- `병합하기(다른객체)` - 다른 객체의 속성을 현재 객체에 병합합니다. (`Object.assign`)
+- `복사하기()` - 객체를 얕은 복사하여 새로운 객체를 반환합니다.
+- `깊은복사하기()` - 객체를 깊은 복사하여 새로운 객체를 반환합니다. (JSON을 사용하여 깊은 복사를 수행)
 
 </details>
 
