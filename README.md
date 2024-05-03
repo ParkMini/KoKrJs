@@ -105,7 +105,7 @@ HTML 파일에 다음과 같은 스크립트 태그를 추가하여 `kokr.js` �
 </details>
 
 <details>
-<summary>날짜 클래스</summary>
+<summary>날짜 클래스 (Date)</summary>
 
 #### 속성
 
@@ -144,7 +144,7 @@ HTML 파일에 다음과 같은 스크립트 태그를 추가하여 `kokr.js` �
 </details>
 
 <details>
-<summary>배열 클래스</summary>
+<summary>배열 클래스 (Array)</summary>
 
 #### 속성
 
@@ -176,7 +176,7 @@ HTML 파일에 다음과 같은 스크립트 태그를 추가하여 `kokr.js` �
 </details>
 
 <details>
-<summary>문자열 클래스</summary>
+<summary>문자열 클래스 (String)</summary>
 
 #### 속성
 
@@ -201,7 +201,7 @@ HTML 파일에 다음과 같은 스크립트 태그를 추가하여 `kokr.js` �
 </details>
 
 <details>
-<summary>객체 클래스</summary>
+<summary>객체 클래스 (Object)</summary>
 
 #### 속성
 
