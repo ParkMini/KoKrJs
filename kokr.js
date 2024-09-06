@@ -910,93 +910,113 @@ class 문자열 {
   }
 }
 
-class 객체 {
+class 약속 {
   /**
-   * 객체 인스턴스를 생성합니다.
-   * @param {Object} 데이터 초기 객체 데이터
+   * 
+   * @param {(해결: (값: any), 거부: (이유? : any))} 집행자 
    */
-  constructor(데이터) {
-    this.객체 = { ...데이터 };
-  }
+  constructor(집행자) {
+    this.상태 = 'pending'; // 초기 상태는 'pending'
+    this.값 = undefined; // resolve로 설정될 값
+    this.이유 = undefined; // reject로 설정될 이유
+    this.onFulfilledCallbacks = []; // 성공 콜백
+    this.onRejectedCallbacks = []; // 실패 콜백
 
-  /**
-   * 객체의 속성과 값을 키-값 쌍으로 반환합니다.
-   */
-  항목들가져오기() {
-    return Object.entries(this.객체);
-  }
-
-  /**
-   * 객체의 모든 키(속성 이름)를 배열로 반환합니다.
-   */
-  키들가져오기() {
-    return Object.keys(this.객체);
-  }
-
-  /**
-   * 객체의 모든 값들을 배열로 반환합니다.
-   */
-  값들가져오기() {
-    return Object.values(this.객체);
-  }
-
-  /**
-   * 지정된 속성의 값을 반환합니다.
-   * @param {string} 속성 속성 이름
-   */
-  속성값가져오기(속성) {
-    return this.객체[속성];
-  }
-
-  /**
-   * 객체에 속성과 값을 추가하거나 변경합니다.
-   * @param {string} 속성 속성 이름
-   * @param {*} 값 설정할 값
-   */
-  속성설정하기(속성, 값) {
-    this.객체[속성] = 값;
-  }
-
-  /**
-   * 객체에서 지정된 속성을 삭제합니다.
-   * @param {string} 속성 삭제할 속성 이름
-   */
-  속성삭제하기(속성) {
-    delete this.객체[속성];
-  }
-
-  /**
-   * 주어진 콜백 함수를 객체의 각 속성에 대해 실행합니다.
-   * @param {Function} 콜백 각 속성에 대해 실행할 콜백 함수
-   */
-  각속성에실행하기(콜백) {
-    for (const 키 in this.객체) {
-      if (this.객체.hasOwnProperty(키)) {
-        콜백(키, this.객체[키]);
+    const 해결 = (값) => {
+      if (this.상태 === 'pending') {
+        this.상태 = 'fulfilled'; // 성공 상태로 변경
+        this.값 = 값;
+        this.onFulfilledCallbacks.forEach((callback) => callback(this.값));
       }
+    };
+
+    const 거부 = (이유) => {
+      if (this.상태 === 'pending') {
+        this.상태 = 'rejected'; // 실패 상태로 변경
+        this.이유 = 이유;
+        this.onRejectedCallbacks.forEach((callback) => callback(this.이유));
+      }
+    };
+
+    try {
+      집행자(해결, 거부);
+    } catch (에러) {
+      거부(에러); // 에러 발생 시 reject 처리
     }
   }
 
   /**
-   * 다른 객체의 속성을 현재 객체에 병합합니다.
-   * @param {Object} 다른객체 병합할 다른 객체
+   * then 메서드: 성공과 실패 콜백을 연결
+   * @param {((값: any) => any) | null | undefined} 이행됨
+   * @param {((이유: any) => any) | null | undefined} 거부됨 
+   * @returns {약속}
    */
-  병합하기(다른객체) {
-    Object.assign(this.객체, 다른객체);
+  그래서(이행됨, 거부됨) {
+    // 거부됨이 undefined일 경우 빈 함수로 설정
+    거부됨 = 거부됨 || ((이유) => { throw 이유; });
+
+    return new 약속((해결, 거부) => {
+      if (this.상태 === 'fulfilled') {
+        try {
+          const 결과 = 이행됨 ? 이행됨(this.값) : this.값;
+          해결(결과); // 결과를 resolve로 전달
+        } catch (error) {
+          거부(error); // 에러 발생 시 reject 처리
+        }
+      } else if (this.상태 === 'rejected') {
+        try {
+          const 결과 = 거부됨(this.이유);
+          해결(결과);
+        } catch (error) {
+          거부(error);
+        }
+      } else {
+        // 아직 pending 상태일 경우, 콜백을 저장
+        this.onFulfilledCallbacks.push((값) => {
+          try {
+            const 결과 = 이행됨 ? 이행됨(값) : 값;
+            해결(결과);
+          } catch (error) {
+            거부(error);
+          }
+        });
+
+        this.onRejectedCallbacks.push((이유) => {
+          try {
+            const 결과 = 거부됨(이유);
+            해결(결과);
+          } catch (error) {
+            거부(error);
+          }
+        });
+      }
+    });
   }
 
   /**
-   * 객체를 얕은 복사하여 새로운 객체를 반환합니다.
+   * catch 메서드: 실패 콜백만 처리
+   * @param {((이유: any) => any)} 거부됨 
+   * @returns {약속}
    */
-  복사하기() {
-    return new 객체({ ...this.객체 });
+  잡다(거부됨) {
+    return this.그래서(null, 거부됨);
   }
 
   /**
-   * 객체를 깊은 복사하여 새로운 객체를 반환합니다.
-   * @note JSON을 사용하여 깊은 복사를 수행하므로, 함수나 심볼 등은 복사되지 않습니다.
+   * finally 메서드: 무조건 실행될 콜백
+   * @param {(() => void) | null | undefined } onFinally 
+   * @returns {약속}
    */
-  깊은복사하기() {
-    return new 객체(JSON.parse(JSON.stringify(this.객체)));
+  마침네(onFinally) {
+    return this.그래서(
+      (값) => {
+        if (onFinally) onFinally();
+        return 값; // 값을 그대로 전달
+      },
+      (이유) => {
+        if (onFinally) onFinally();
+        throw 이유; // 실패의 이유를 그대로 전달 (reject 처리)
+      }
+    );
   }
 }
