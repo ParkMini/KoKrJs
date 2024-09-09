@@ -233,8 +233,8 @@ HTML 파일에 다음과 같은 스크립트 태그를 추가하여 `kokr.js` �
 #### 메서드
 
 - `그래서()` - 약속을 리턴하고 두 개의 콜백 함수를 인수로 받습니다. 하나는 Promise가 이행했을 때, 다른 하나는 거부했을 때를 위한 콜백 함수입니다. (`Promise.prototype.then`)
-- `잡다()` - 프로미스가 거부될 때 호출될 함수를 예약합니다. (`Promise.prototype.catch`)
-- `마침네()` - 프로미스가 끝날때 무조건 실행됩니다. (`Promise.prototype.finally`)
+- `잡다()` - 약속이 거부될 때 호출될 함수를 예약합니다. (`Promise.prototype.catch`)
+- `마침내()` - 약속이 끝날때 무조건 실행됩니다. (`Promise.prototype.finally`)
 
 </details>
 
