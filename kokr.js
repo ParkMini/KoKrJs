@@ -1007,7 +1007,7 @@ class 약속 {
    * @param {(() => void) | null | undefined } onFinally 
    * @returns {약속}
    */
-  마침네(onFinally) {
+  마침내(onFinally) {
     return this.그래서(
       (값) => {
         if (onFinally) onFinally();
