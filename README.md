@@ -39,6 +39,7 @@ HTML 파일에 다음과 같은 스크립트 태그를 추가하여 `kokr.js` �
 | 배열(Array)    | ✅        |
 | 문자열(String) | ✅        |
 | 객체(Object)   | ✅        |
+| 약속(Promise) | ✅
 
 <details>
 <summary>콘솔 클래스 (Console)</summary>
@@ -219,6 +220,21 @@ HTML 파일에 다음과 같은 스크립트 태그를 추가하여 `kokr.js` �
 - `병합하기(다른객체)` - 다른 객체의 속성을 현재 객체에 병합합니다. (`Object.assign`)
 - `복사하기()` - 객체를 얕은 복사하여 새로운 객체를 반환합니다.
 - `깊은복사하기()` - 객체를 깊은 복사하여 새로운 객체를 반환합니다. (JSON을 사용하여 깊은 복사를 수행)
+
+</details>
+
+<details>
+<summary>약속 클래스 (Promise)</summary>
+
+#### 속성
+
+- `약속` - 구현된 CustomPromise를 저장합니다.
+
+#### 메서드
+
+- `그래서()` - 약속을 리턴하고 두 개의 콜백 함수를 인수로 받습니다. 하나는 Promise가 이행했을 때, 다른 하나는 거부했을 때를 위한 콜백 함수입니다. (`Promise.prototype.then`)
+- `잡다()` - 약속이 거부될 때 호출될 함수를 예약합니다. (`Promise.prototype.catch`)
+- `마침내()` - 약속이 끝날때 무조건 실행됩니다. (`Promise.prototype.finally`)
 
 </details>
 
